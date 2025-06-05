@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Information Book</string>
+    <string name="app_title">The Information Book App</string>
+
+    <!-- Main Menu -->
+    <string name="countries_title">The Countries</string>
+    <string name="leaders_title">The leaders</string>
+    <string name="museums_title">The museums</string>
+    <string name="wonders_title">Seven Wonders of\nThe World</string>
+
+    <!-- Country Tabs -->
+    <string name="uk_tab">United Kingdom</string>
+    <string name="france_tab">France</string>
+    <string name="italy_tab">Italy</string>
+
+    <!-- Leader Tabs -->
+    <string name="leader1_tab">Leader 1</string>
+    <string name="leader2_tab">Leader 2</string>
+    <string name="leader3_tab">Leader 3</string>
+
+    <!-- Museum Tabs -->
+    <string name="museum1_tab">British Museum</string>
+    <string name="museum2_tab">Louvre</string>
+    <string name="museum3_tab">Uffizi</string>
+
+    <!-- Wonder Tabs -->
+    <string name="wonder1_tab">Great Wall</string>
+    <string name="wonder2_tab">Colosseum</string>
+    <string name="wonder3_tab">Taj Mahal</string>
+
+    <!-- Loading -->
+    <string name="loading">Loading...</string>
+    <string name="loading_country">Loading country information...</string>
+    <string name="loading_leader">Loading leader information...</string>
+    <string name="loading_museum">Loading museum information...</string>
+    <string name="loading_wonder">Loading wonder information...</string>
+
+    <!-- Country Info Labels -->
+    <string name="capital_label">Capital</string>
+    <string name="largest_city_label">Largest City</string>
+    <string name="language_label">National Language</string>
+    <string name="area_label">Total Area</string>
+    <string name="currency_label">Currency</string>
+
+    <!-- Leader Info Labels -->
+    <string name="country_label">Country</string>
+    <string name="birth_date_label">Birth Date</string>
+    <string name="in_office_label">In Office</string>
+    <string name="biography_label">Biography</string>
+
+    <!-- Museum Info Labels -->
+    <string name="location_label">Location</string>
+    <string name="founded_label">Founded</string>
+    <string name="visitors_label">Annual Visitors</string>
+    <string name="famous_for_label">Famous For</string>
+    <string name="description_label">Description</string>
+
+    <!-- Wonder Info Labels -->
+    <string name="built_label">Built</string>
+    <string name="height_label">Height</string>
+    <string name="length_label">Length</string>
+    <string name="unesco_label">UNESCO Site</string>
+</resources>

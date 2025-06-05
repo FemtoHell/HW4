@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General Dimensions -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Card Dimensions -->
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_title">24sp</dimen>
+    <dimen name="text_size_subtitle">18sp</dimen>
+    <dimen name="text_size_body">16sp</dimen>
+    <dimen name="text_size_label">14sp</dimen>
+
+    <!-- Header -->
+    <dimen name="header_height">60dp</dimen>
+    <dimen name="app_title_size">20sp</dimen>
+
+    <!-- Main Screen -->
+    <dimen name="main_card_icon_size">120dp</dimen>
+    <dimen name="main_grid_padding">16dp</dimen>
+
+    <!-- Tab Layout -->
+    <dimen name="tab_height">48dp</dimen>
+    <dimen name="tab_indicator_height">3dp</dimen>
+
+    <!-- Loading Component -->
+    <dimen name="progress_bar_size">80dp</dimen>
+    <dimen name="loading_text_margin_top">16dp</dimen>
+
+    <!-- Country Fragment -->
+    <dimen name="flag_height">200dp</dimen>
+    <dimen name="info_label_width">140dp</dimen>
+
+    <!-- Leader Fragment -->
+    <dimen name="leader_photo_size">200dp</dimen>
+
+    <!-- Museum Fragment -->
+    <dimen name="museum_image_height">250dp</dimen>
+
+    <!-- Wonder Fragment -->
+    <dimen name="wonder_image_height">300dp</dimen>
+
+    <!-- Spacing -->
+    <dimen name="spacing_small">4dp</dimen>
+    <dimen name="spacing_medium">8dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+    <dimen name="spacing_xlarge">24dp</dimen>
+</resources>
