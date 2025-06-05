@@ -4,13 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View; // Add this import for the transformPage method
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MuseumsActivity extends AppCompatActivity {
 
+    private static final String TAG = "MuseumsActivity";
     private TabLayout tabLayoutMuseums;
     private ViewPager2 viewPagerMuseums;
     private MuseumPagerAdapter museumPagerAdapter;
@@ -18,6 +21,7 @@ public class MuseumsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate called");
         setContentView(R.layout.activity_museums);
 
         // Enable back button in action bar
@@ -34,37 +38,61 @@ public class MuseumsActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        Log.d(TAG, "initViews called");
         tabLayoutMuseums = findViewById(R.id.tabLayoutMuseums);
         viewPagerMuseums = findViewById(R.id.viewPagerMuseums);
+
+        if (tabLayoutMuseums == null) {
+            Log.e(TAG, "tabLayoutMuseums is NULL!");
+        } else {
+            Log.d(TAG, "tabLayoutMuseums found");
+        }
+
+        if (viewPagerMuseums == null) {
+            Log.e(TAG, "viewPagerMuseums is NULL!");
+        } else {
+            Log.d(TAG, "viewPagerMuseums found");
+        }
     }
 
     private void setupViewPager() {
+        Log.d(TAG, "setupViewPager called");
+
         // Create adapter
         museumPagerAdapter = new MuseumPagerAdapter(this);
-        viewPagerMuseums.setAdapter(museumPagerAdapter);
+        Log.d(TAG, "Adapter created, item count: " + museumPagerAdapter.getItemCount());
 
-        // Connect TabLayout with ViewPager2
-        new TabLayoutMediator(tabLayoutMuseums, viewPagerMuseums,
+        viewPagerMuseums.setAdapter(museumPagerAdapter);
+        Log.d(TAG, "Adapter set to ViewPager2");
+
+        // Connect TabLayout with ViewPager2 using string array for tab titles
+        String[] tabTitles = {"British Museum", "Louvre", "Uffizi"};
+        Log.d(TAG, "Tab titles array length: " + tabTitles.length);
+
+        TabLayoutMediator mediator = new TabLayoutMediator(tabLayoutMuseums, viewPagerMuseums,
                 (tab, position) -> {
-                    switch (position) {
-                        case 0:
-                            tab.setText("British Museum");
-                            break;
-                        case 1:
-                            tab.setText("Louvre");
-                            break;
-                        case 2:
-                            tab.setText("Uffizi");
-                            break;
+                    Log.d(TAG, "Setting tab at position: " + position);
+                    if (position < tabTitles.length) {
+                        tab.setText(tabTitles[position]);
+                        Log.d(TAG, "Tab " + position + " text set to: " + tabTitles[position]);
+                    } else {
+                        Log.e(TAG, "Position " + position + " >= tabTitles.length " + tabTitles.length);
                     }
-                }).attach();
+                });
+
+        mediator.attach();
+        Log.d(TAG, "TabLayoutMediator attached");
+
+        // Check tab count after setup
+        int tabCount = tabLayoutMuseums.getTabCount();
+        Log.d(TAG, "Final tab count: " + tabCount);
 
         // Optional: Add page change callback with animation
         viewPagerMuseums.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                // You can add custom animations or analytics here
+                Log.d(TAG, "Page selected: " + position);
             }
 
             @Override

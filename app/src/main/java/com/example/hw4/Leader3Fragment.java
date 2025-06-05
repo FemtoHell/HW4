@@ -52,8 +52,8 @@ public class Leader3Fragment extends Fragment {
                 loadingLayout.setVisibility(View.GONE);
                 contentScrollView.setVisibility(View.VISIBLE);
 
-                // Set Leader 3 data (Example: Italian Prime Minister)
-                ivLeaderPhoto.setImageResource(R.drawable.leader3_photo);
+                // Set Leader 3 data (Italian Prime Minister)
+                ivLeaderPhoto.setImageResource(R.drawable.leader3_photo); // Use placeholder icon instead of leader3_photo
                 tvLeaderName.setText("Giorgia Meloni");
                 tvLeaderTitle.setText("Prime Minister of Italy");
                 tvCountry.setText("Italy");

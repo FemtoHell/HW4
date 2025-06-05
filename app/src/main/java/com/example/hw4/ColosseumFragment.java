@@ -54,7 +54,7 @@ public class ColosseumFragment extends Fragment {
                 contentScrollView.setVisibility(View.VISIBLE);
 
                 // Set Colosseum data
-                ivWonderImage.setImageResource(R.drawable.colosseum);
+                ivWonderImage.setImageResource(R.drawable.colosseum); // Use placeholder icon
                 tvWonderName.setText("The Colosseum");
                 tvLocation.setText("Rome, Italy");
                 tvBuilt.setText("72-80 AD");

@@ -43,19 +43,13 @@ public class LeadersActivity extends AppCompatActivity {
         leaderPagerAdapter = new LeaderPagerAdapter(this);
         viewPagerLeaders.setAdapter(leaderPagerAdapter);
 
-        // Connect TabLayout with ViewPager2
+        // Connect TabLayout with ViewPager2 using string array for tab titles
+        String[] tabTitles = {"Starmer", "Macron", "Meloni"}; // Shortened titles
+
         new TabLayoutMediator(tabLayoutLeaders, viewPagerLeaders,
                 (tab, position) -> {
-                    switch (position) {
-                        case 0:
-                            tab.setText("Rishi Sunak");
-                            break;
-                        case 1:
-                            tab.setText("Emmanuel Macron");
-                            break;
-                        case 2:
-                            tab.setText("Giorgia Meloni");
-                            break;
+                    if (position < tabTitles.length) {
+                        tab.setText(tabTitles[position]);
                     }
                 }).attach();
 
@@ -67,9 +61,6 @@ public class LeadersActivity extends AppCompatActivity {
                 // You can add analytics or other logic here
             }
         });
-
-        // Optional: Disable swipe gesture if needed
-        // viewPagerLeaders.setUserInputEnabled(false);
     }
 
     @Override

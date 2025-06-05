@@ -64,7 +64,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingVertical="8dp">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <TextView
                             android:layout_width="140dp"
@@ -93,7 +94,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingVertical="8dp">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <TextView
                             android:layout_width="140dp"
@@ -122,7 +124,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingVertical="8dp">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <TextView
                             android:layout_width="140dp"
@@ -151,7 +154,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingVertical="8dp">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <TextView
                             android:layout_width="140dp"
@@ -180,7 +184,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingVertical="8dp">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
                         <TextView
                             android:layout_width="140dp"
@@ -212,7 +217,7 @@
                         android:layout_marginTop="16dp"
                         android:text="Description"
                         android:textSize="16sp"
-                        android:lineSpacing="4dp"
+                        android:lineSpacingExtra="4dp"
                         android:textColor="#333333" />
 
                 </LinearLayout>

@@ -23,7 +23,7 @@ public class BritishMuseumFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.museums_activity, container, false);
+        View view = inflater.inflate(R.layout.fragment_museum, container, false);
 
         // Initialize views
         loadingLayout = view.findViewById(R.id.loadingLayout);
@@ -53,7 +53,7 @@ public class BritishMuseumFragment extends Fragment {
                 contentScrollView.setVisibility(View.VISIBLE);
 
                 // Set British Museum data
-                ivMuseumImage.setImageResource(R.drawable.british_museum);
+                ivMuseumImage.setImageResource(R.drawable.british_museum); // Use placeholder icon
                 tvMuseumName.setText("The British Museum");
                 tvLocation.setText("London, United Kingdom");
                 tvFounded.setText("1753");

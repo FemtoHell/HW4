@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.tabs.TabLayout;
@@ -11,13 +12,12 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class CountriesActivity extends AppCompatActivity {
 
-    private TabLayout tabLayoutCountries;
-    private ViewPager2 viewPagerCountries;
-    private CountryPagerAdapter countryPagerAdapter;
+    private static final String TAG = "CountriesActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate called");
         setContentView(R.layout.activity_countries);
 
         // Enable back button in action bar
@@ -26,47 +26,38 @@ public class CountriesActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Countries");
         }
 
-        // Initialize views
-        initViews();
+        // Find views - EXACTLY match XML IDs
+        TabLayout tabLayoutCountries = findViewById(R.id.tabLayoutCountries);
+        ViewPager2 viewPagerCountries = findViewById(R.id.viewPagerCountries);
 
-        // Setup ViewPager and TabLayout
-        setupViewPager();
-    }
+        // Debug: Check if views are found
+        if (tabLayoutCountries == null) {
+            Log.e(TAG, "ERROR: tabLayoutCountries is NULL! Check XML file.");
+            return;
+        }
+        if (viewPagerCountries == null) {
+            Log.e(TAG, "ERROR: viewPagerCountries is NULL! Check XML file.");
+            return;
+        }
 
-    private void initViews() {
-        tabLayoutCountries = findViewById(R.id.tabLayoutCountries);
-        viewPagerCountries = findViewById(R.id.viewPagerCountries);
-    }
+        Log.d(TAG, "Both views found successfully");
 
-    private void setupViewPager() {
-        // Create adapter
-        countryPagerAdapter = new CountryPagerAdapter(this);
-        viewPagerCountries.setAdapter(countryPagerAdapter);
+        // Create and set adapter
+        CountryPagerAdapter adapter = new CountryPagerAdapter(this);
+        viewPagerCountries.setAdapter(adapter);
+        Log.d(TAG, "Adapter set");
 
-        // Connect TabLayout with ViewPager2
+        // Setup tabs with shorter titles
+        String[] tabTitles = {"UK", "France", "Italy"};
         new TabLayoutMediator(tabLayoutCountries, viewPagerCountries,
                 (tab, position) -> {
-                    switch (position) {
-                        case 0:
-                            tab.setText("United Kingdom");
-                            break;
-                        case 1:
-                            tab.setText("France");
-                            break;
-                        case 2:
-                            tab.setText("Italy");
-                            break;
+                    if (position < tabTitles.length) {
+                        tab.setText(tabTitles[position]);
+                        Log.d(TAG, "Tab " + position + " set to: " + tabTitles[position]);
                     }
                 }).attach();
 
-        // Optional: Add page change callback
-        viewPagerCountries.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                // You can add analytics or other logic here
-            }
-        });
+        Log.d(TAG, "Setup complete, tab count: " + tabLayoutCountries.getTabCount());
     }
 
     @Override

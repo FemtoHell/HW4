@@ -230,7 +230,7 @@
                         android:layout_height="wrap_content"
                         android:text="Wonder description..."
                         android:textSize="16sp"
-                        android:lineSpacing="4dp"
+                        android:lineSpacingExtra="4dp"
                         android:textColor="#333333" />
 
                 </LinearLayout>

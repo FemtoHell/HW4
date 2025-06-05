@@ -54,7 +54,7 @@ public class GreatWallFragment extends Fragment {
                 contentScrollView.setVisibility(View.VISIBLE);
 
                 // Set Great Wall of China data
-                ivWonderImage.setImageResource(R.drawable.great_wall);
+                ivWonderImage.setImageResource(R.drawable.great_wall); // Use placeholder icon instead of great_wall
                 tvWonderName.setText("The Great Wall of China");
                 tvLocation.setText("China");
                 tvBuilt.setText("7th century BC - 17th century AD");

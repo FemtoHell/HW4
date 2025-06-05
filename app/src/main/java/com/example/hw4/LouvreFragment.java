@@ -53,7 +53,7 @@ public class LouvreFragment extends Fragment {
                 contentScrollView.setVisibility(View.VISIBLE);
 
                 // Set Louvre Museum data
-                ivMuseumImage.setImageResource(R.drawable.louvre_museum);
+                ivMuseumImage.setImageResource(R.drawable.louvre_museum); // Use placeholder icon instead of louvre_museum
                 tvMuseumName.setText("The Louvre Museum");
                 tvLocation.setText("Paris, France");
                 tvFounded.setText("1793");

@@ -53,7 +53,7 @@ public class FranceFragment extends Fragment {
                 contentScrollView.setVisibility(View.VISIBLE);
 
                 // Set France data
-                ivFlag.setImageResource(R.drawable.flag_france);
+                ivFlag.setImageResource(R.drawable.flag_france); // Use placeholder icon
                 tvCapital.setText("Paris");
                 tvLargestCity.setText("Paris");
                 tvLanguage.setText("French");

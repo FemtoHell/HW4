@@ -54,7 +54,7 @@ public class TajMahalFragment extends Fragment {
                 contentScrollView.setVisibility(View.VISIBLE);
 
                 // Set Taj Mahal data
-                ivWonderImage.setImageResource(R.drawable.taj_mahal);
+                ivWonderImage.setImageResource(R.drawable.taj_mahal); // Use placeholder icon instead of taj_mahal
                 tvWonderName.setText("The Taj Mahal");
                 tvLocation.setText("Agra, India");
                 tvBuilt.setText("1632-1653");

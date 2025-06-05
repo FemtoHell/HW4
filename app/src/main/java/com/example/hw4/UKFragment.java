@@ -53,7 +53,7 @@ public class UKFragment extends Fragment {
                 contentScrollView.setVisibility(View.VISIBLE);
 
                 // Set UK data
-                ivFlag.setImageResource(R.drawable.flag_uk);
+                ivFlag.setImageResource(R.drawable.flag_uk); // Use placeholder icon
                 tvCapital.setText("London");
                 tvLargestCity.setText("London");
                 tvLanguage.setText("English");

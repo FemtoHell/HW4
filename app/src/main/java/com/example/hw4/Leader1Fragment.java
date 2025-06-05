@@ -52,22 +52,20 @@ public class Leader1Fragment extends Fragment {
                 loadingLayout.setVisibility(View.GONE);
                 contentScrollView.setVisibility(View.VISIBLE);
 
-                // Set Leader 1 data (Example: UK Prime Minister)
-                ivLeaderPhoto.setImageResource(R.drawable.leader1_photo);
-                tvLeaderName.setText("Rishi Sunak");
+                // Set Leader 1 data (Updated: Keir Starmer - current UK PM)
+                ivLeaderPhoto.setImageResource(R.drawable.leader1_photo); // Use placeholder icon instead of leader1_photo
+                tvLeaderName.setText("Keir Starmer");
                 tvLeaderTitle.setText("Prime Minister of the United Kingdom");
                 tvCountry.setText("United Kingdom");
-                tvBirthDate.setText("12 May 1980");
-                tvInOffice.setText("October 2022 - Present");
-                tvBiography.setText("Rishi Sunak is a British politician who has served as Prime Minister " +
-                        "of the United Kingdom and Leader of the Conservative Party since October 2022. " +
-                        "He previously held two cabinet positions under Boris Johnson, serving as " +
-                        "Chancellor of the Exchequer from 2020 to 2022 and Chief Secretary to the " +
-                        "Treasury from 2019 to 2020. Sunak was born in Southampton to parents of " +
-                        "Indian heritage who migrated to Britain from East Africa in the 1960s. " +
-                        "He was educated at Winchester College, studied philosophy, politics and " +
-                        "economics at Lincoln College, Oxford, and earned an MBA from Stanford " +
-                        "University as a Fulbright Scholar.");
+                tvBirthDate.setText("2 September 1962");
+                tvInOffice.setText("July 2024 - Present");
+                tvBiography.setText("Sir Keir Rodney Starmer is a British politician and barrister " +
+                        "who has served as Prime Minister of the United Kingdom and Leader of the " +
+                        "Labour Party since July 2024. Before entering politics, Starmer was a " +
+                        "barrister specialising in human rights issues. He served as Director of " +
+                        "Public Prosecutions and head of the Crown Prosecution Service from 2008 " +
+                        "to 2013. Starmer was elected as Member of Parliament for Holborn and St " +
+                        "Pancras in 2015 and became Leader of the Labour Party in 2020.");
             }
         }, 2000); // 2 seconds delay
     }

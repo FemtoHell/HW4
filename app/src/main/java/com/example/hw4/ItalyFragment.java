@@ -53,7 +53,7 @@ public class ItalyFragment extends Fragment {
                 contentScrollView.setVisibility(View.VISIBLE);
 
                 // Set Italy data
-                ivFlag.setImageResource(R.drawable.flag_italy);
+                ivFlag.setImageResource(R.drawable.flag_italy); // Use placeholder icon
                 tvCapital.setText("Rome");
                 tvLargestCity.setText("Rome");
                 tvLanguage.setText("Italian");

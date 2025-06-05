@@ -53,7 +53,7 @@ public class UffiziFragment extends Fragment {
                 contentScrollView.setVisibility(View.VISIBLE);
 
                 // Set Uffizi Gallery data
-                ivMuseumImage.setImageResource(R.drawable.uffizi_gallery);
+                ivMuseumImage.setImageResource(R.drawable.uffizi_gallery); // Use placeholder icon instead of uffizi_gallery
                 tvMuseumName.setText("The Uffizi Gallery");
                 tvLocation.setText("Florence, Italy");
                 tvFounded.setText("1581");
