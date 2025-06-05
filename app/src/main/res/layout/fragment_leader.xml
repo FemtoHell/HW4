@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3E5F5"
+    tools:context=".Leader1Fragment">
+
+    <!-- Loading Layout -->
+    <include
+        android:id="@+id/loadingLayout"
+        layout="@layout/loading_component"
+        android:visibility="visible" />
+
+    <!-- Content ScrollView -->
+    <ScrollView
+        android:id="@+id/contentScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Leader Photo Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="100dp"
+                app:cardElevation="4dp">
+
+                <ImageView
+                    android:id="@+id/ivLeaderPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Leader Name -->
+            <TextView
+                android:id="@+id/tvLeaderName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Leader Name"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="#333333"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Leader Title -->
+            <TextView
+                android:id="@+id/tvLeaderTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Leader Title"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:textColor="#666666"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Leader Information Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@android:color/white">
+
+                    <!-- Country -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="Country"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=": "
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvCountry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Country Name"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <!-- Birth Date -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="Birth Date"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=": "
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvBirthDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <!-- Years in Office -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="8dp">
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="In Office"
+                            android:textStyle="bold"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=": "
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvInOffice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Years"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <!-- Biography -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Biography"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvBiography"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Leader biography..."
+                        android:textSize="16sp"
+                        android:lineSpacing="4dp"
+                        android:textColor="#333333" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

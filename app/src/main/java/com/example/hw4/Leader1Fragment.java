@@ -1,5 +1,6 @@
 package com.example.hw4;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -44,6 +45,7 @@ public class Leader1Fragment extends Fragment {
     private void loadData() {
         // Show loading for 2 seconds
         new Handler().postDelayed(new Runnable() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void run() {
                 // Hide loading and show content

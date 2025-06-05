@@ -1,5 +1,6 @@
 package com.example.hw4;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -22,7 +23,7 @@ public class BritishMuseumFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_museum, container, false);
+        View view = inflater.inflate(R.layout.museums_activity, container, false);
 
         // Initialize views
         loadingLayout = view.findViewById(R.id.loadingLayout);
@@ -44,6 +45,7 @@ public class BritishMuseumFragment extends Fragment {
     private void loadData() {
         // Show loading for 2 seconds
         new Handler().postDelayed(new Runnable() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void run() {
                 // Hide loading and show content
