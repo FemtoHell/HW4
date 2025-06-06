@@ -13,7 +13,7 @@
         android:id="@+id/tabLayoutCountries"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:background="#7C4DFF"
         android:contentDescription="Countries navigation tabs"
         app:tabTextColor="#E0E0E0"
