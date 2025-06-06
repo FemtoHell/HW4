@@ -5,7 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View; // Add this import for the transformPage method
+import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -44,7 +44,7 @@ public class WondersActivity extends AppCompatActivity {
         wonderPagerAdapter = new WonderPagerAdapter(this);
         viewPagerWonders.setAdapter(wonderPagerAdapter);
 
-        // Connect TabLayout with ViewPager2 using string array for tab titles
+        // Connect TabLayout with ViewPager2
         String[] tabTitles = {"Great Wall", "Colosseum", "Taj Mahal"};
 
         new TabLayoutMediator(tabLayoutWonders, viewPagerWonders,
@@ -54,51 +54,29 @@ public class WondersActivity extends AppCompatActivity {
                     }
                 }).attach();
 
-        // Optional: Add smooth scroll and custom offscreen page limit
+        // Set offscreen page limit
         viewPagerWonders.setOffscreenPageLimit(1);
 
-        // Optional: Add page change callback
+        // Page change callback
         viewPagerWonders.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                // Log the current wonder being viewed
                 String wonderName = "";
                 switch (position) {
-                    case 0:
-                        wonderName = "Great Wall of China";
-                        break;
-                    case 1:
-                        wonderName = "Colosseum";
-                        break;
-                    case 2:
-                        wonderName = "Taj Mahal";
-                        break;
+                    case 0: wonderName = "Great Wall of China"; break;
+                    case 1: wonderName = "Colosseum"; break;
+                    case 2: wonderName = "Taj Mahal"; break;
                 }
-                // You can add analytics tracking here
             }
         });
 
-        // Optional: Add custom page transformer for zoom effect
+        // FIXED: Simple PageTransformer like MuseumsActivity - no complex transformations
         viewPagerWonders.setPageTransformer(new ViewPager2.PageTransformer() {
             @Override
             public void transformPage(View page, float position) {
-                if (position < -1) {
-                    page.setAlpha(0);
-                } else if (position <= 0) {
-                    page.setAlpha(1);
-                    page.setTranslationX(0);
-                    page.setScaleX(1);
-                    page.setScaleY(1);
-                } else if (position <= 1) {
-                    page.setAlpha(1 - position);
-                    page.setTranslationX(page.getWidth() * -position);
-                    float scaleFactor = 0.75f + (1 - 0.75f) * (1 - Math.abs(position));
-                    page.setScaleX(scaleFactor);
-                    page.setScaleY(scaleFactor);
-                } else {
-                    page.setAlpha(0);
-                }
+                // Simple fade animation only - no scale or translation interference
+                page.setAlpha(1 - Math.abs(position));
             }
         });
     }

@@ -48,11 +48,11 @@ public class BritishMuseumFragment extends Fragment {
             @SuppressLint("SetTextI18n")
             @Override
             public void run() {
-                // Hide loading and show content
+
                 loadingLayout.setVisibility(View.GONE);
                 contentScrollView.setVisibility(View.VISIBLE);
 
-                // Set British Museum data
+
                 ivMuseumImage.setImageResource(R.drawable.british_museum); // Use placeholder icon
                 tvMuseumName.setText("The British Museum");
                 tvLocation.setText("London, United Kingdom");
@@ -71,6 +71,6 @@ public class BritishMuseumFragment extends Fragment {
                         "over the following 250 years was largely a result of British colonisation " +
                         "and resulted in the creation of several branch institutions.");
             }
-        }, 2000); // 2 seconds delay
+        }, 2000);
     }
 }

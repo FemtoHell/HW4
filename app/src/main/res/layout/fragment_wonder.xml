@@ -19,13 +19,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:clickable="true"
+        android:focusable="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:clickable="false"
+            android:focusable="false">
 
             <!-- Wonder Image Card -->
             <androidx.cardview.widget.CardView
@@ -33,13 +37,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                app:cardElevation="4dp"
+                android:clickable="false"
+                android:focusable="false">
 
                 <ImageView
                     android:id="@+id/ivWonderImage"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    android:clickable="false"
+                    android:focusable="false" />
 
             </androidx.cardview.widget.CardView>
 
@@ -53,48 +61,62 @@
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:textColor="#333333"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                android:clickable="false"
+                android:focusable="false" />
 
             <!-- Wonder Information Card -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                app:cardElevation="4dp"
+                android:clickable="false"
+                android:focusable="false">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp"
-                    android:background="@android:color/white">
+                    android:background="@android:color/white"
+                    android:clickable="false"
+                    android:focusable="false">
 
                     <!-- Location -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingVertical="8dp">
+                        android:paddingVertical="8dp"
+                        android:clickable="false"
+                        android:focusable="false">
 
                         <TextView
                             android:layout_width="140dp"
                             android:layout_height="wrap_content"
                             android:text="Location"
                             android:textStyle="bold"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text=": "
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:id="@+id/tvLocation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Location"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                     </LinearLayout>
 
@@ -103,27 +125,35 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingVertical="8dp">
+                        android:paddingVertical="8dp"
+                        android:clickable="false"
+                        android:focusable="false">
 
                         <TextView
                             android:layout_width="140dp"
                             android:layout_height="wrap_content"
                             android:text="Built"
                             android:textStyle="bold"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text=": "
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:id="@+id/tvBuilt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Period"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                     </LinearLayout>
 
@@ -132,27 +162,35 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingVertical="8dp">
+                        android:paddingVertical="8dp"
+                        android:clickable="false"
+                        android:focusable="false">
 
                         <TextView
                             android:layout_width="140dp"
                             android:layout_height="wrap_content"
                             android:text="Length"
                             android:textStyle="bold"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text=": "
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:id="@+id/tvLength"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Length"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                     </LinearLayout>
 
@@ -161,27 +199,35 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingVertical="8dp">
+                        android:paddingVertical="8dp"
+                        android:clickable="false"
+                        android:focusable="false">
 
                         <TextView
                             android:layout_width="140dp"
                             android:layout_height="wrap_content"
                             android:text="Height"
                             android:textStyle="bold"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text=": "
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:id="@+id/tvHeight"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Height"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                     </LinearLayout>
 
@@ -190,27 +236,35 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingVertical="8dp">
+                        android:paddingVertical="8dp"
+                        android:clickable="false"
+                        android:focusable="false">
 
                         <TextView
                             android:layout_width="140dp"
                             android:layout_height="wrap_content"
                             android:text="UNESCO Site"
                             android:textStyle="bold"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text=": "
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                         <TextView
                             android:id="@+id/tvUnescoSite"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Yes/No"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:clickable="false"
+                            android:focusable="false" />
 
                     </LinearLayout>
 
@@ -222,7 +276,9 @@
                         android:textStyle="bold"
                         android:textSize="18sp"
                         android:layout_marginTop="16dp"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_marginBottom="8dp"
+                        android:clickable="false"
+                        android:focusable="false" />
 
                     <TextView
                         android:id="@+id/tvDescription"
@@ -231,7 +287,9 @@
                         android:text="Wonder description..."
                         android:textSize="16sp"
                         android:lineSpacingExtra="4dp"
-                        android:textColor="#333333" />
+                        android:textColor="#333333"
+                        android:clickable="false"
+                        android:focusable="false" />
 
                 </LinearLayout>
 

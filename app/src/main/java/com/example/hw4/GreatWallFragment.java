@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -25,7 +26,7 @@ public class GreatWallFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_wonder, container, false);
 
-        // Initialize views
+
         loadingLayout = view.findViewById(R.id.loadingLayout);
         contentScrollView = view.findViewById(R.id.contentScrollView);
         ivWonderImage = view.findViewById(R.id.ivWonderImage);
@@ -37,7 +38,7 @@ public class GreatWallFragment extends Fragment {
         tvUnescoSite = view.findViewById(R.id.tvUnescoSite);
         tvDescription = view.findViewById(R.id.tvDescription);
 
-        // Load data with delay to show loading
+
         loadData();
 
         return view;
@@ -53,8 +54,11 @@ public class GreatWallFragment extends Fragment {
                 loadingLayout.setVisibility(View.GONE);
                 contentScrollView.setVisibility(View.VISIBLE);
 
+                // Setup smart touch handling
+                setupSmartTouchHandling();
+
                 // Set Great Wall of China data
-                ivWonderImage.setImageResource(R.drawable.great_wall); // Use placeholder icon instead of great_wall
+                ivWonderImage.setImageResource(R.drawable.great_wall);
                 tvWonderName.setText("The Great Wall of China");
                 tvLocation.setText("China");
                 tvBuilt.setText("7th century BC - 17th century AD");
@@ -72,8 +76,64 @@ public class GreatWallFragment extends Fragment {
                         "(1368–1644). Apart from defense, other purposes of the Great Wall have " +
                         "included border controls, allowing the imposition of duties on goods " +
                         "transported along the Silk Road, regulation or encouragement of trade " +
-                        "and the control of immigration and emigration.");
+                        "and the control of immigration and emigration. The Great Wall stretches from " +
+                        "Dandong in the east to Lop Lake in the west, along an arc that roughly " +
+                        "delineates the historical northern borders of China and marks the border " +
+                        "between Inner Mongolia and China proper. This massive fortification system " +
+                        "represents one of the most impressive architectural feats in history and " +
+                        "continues to be a symbol of Chinese ingenuity and perseverance.");
             }
-        }, 2000); // 2 seconds delay
+        }, 2000);
+    }
+
+    private void setupSmartTouchHandling() {
+        if (contentScrollView != null) {
+            contentScrollView.setOnTouchListener(new View.OnTouchListener() {
+                private float startX, startY;
+                private boolean isScrollingVertically = false;
+                private boolean isScrollingHorizontally = false;
+
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            startX = event.getX();
+                            startY = event.getY();
+                            isScrollingVertically = false;
+                            isScrollingHorizontally = false;
+
+                            break;
+
+                        case MotionEvent.ACTION_MOVE:
+                            float deltaX = Math.abs(event.getX() - startX);
+                            float deltaY = Math.abs(event.getY() - startY);
+
+
+                            if (deltaX > 20 || deltaY > 20) {
+                                if (deltaY > deltaX && !isScrollingHorizontally) {
+
+                                    isScrollingVertically = true;
+                                    v.getParent().requestDisallowInterceptTouchEvent(true);
+                                } else if (deltaX > deltaY && !isScrollingVertically) {
+
+                                    isScrollingHorizontally = true;
+                                    v.getParent().requestDisallowInterceptTouchEvent(false);
+                                    return false;
+                                }
+                            }
+                            break;
+
+                        case MotionEvent.ACTION_UP:
+                        case MotionEvent.ACTION_CANCEL:
+
+                            v.getParent().requestDisallowInterceptTouchEvent(false);
+                            isScrollingVertically = false;
+                            isScrollingHorizontally = false;
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
     }
 }
